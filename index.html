@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shovel Group | On-demand snow removal</title>
+  <meta name="description" content="Shovel Group, by Reliable Sno Solutions LLC: on-demand snow removal from vetted local pros. Flat prices, live tracking and photos when it's done. Coming soon." />
+  <meta name="theme-color" content="#020b2a" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta property="og:title" content="Shovel Group | Snow day? Handled." />
+  <meta property="og:description" content="On-demand snow removal from vetted local pros. Coming soon." />
+  <meta property="og:image" content="https://shovelgroup.com/icon-512.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep-950: #020b2a; --deep-900: #04164a; --deep-800: #072167; --deep-700: #0a2d86;
+      --brand-400: #5a98ff; --brand-500: #2f7bff; --brand-600: #0a63f5;
+      --ice-100: #e2efff; --ice-200: #c7e0ff; --ice-300: #9ccaff;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", Inter, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font); color: #fff; background: var(--deep-950);
+      -webkit-font-smoothing: antialiased; line-height: 1.5; overflow-x: hidden;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden; min-height: 100vh; min-height: 100svh;
+      display: flex; flex-direction: column;
+      background: linear-gradient(180deg, var(--deep-950) 0%, var(--deep-900) 55%, var(--deep-700) 100%);
+    }
+    #snow { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    .glow { position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none; }
+    .glow.a { width: 760px; height: 460px; right: -160px; bottom: -180px; background: rgba(47, 123, 255, .28); }
+    .glow.b { width: 420px; height: 420px; left: -180px; top: 30%; background: rgba(10, 99, 245, .16); }
+
+    nav { position: relative; width: 100%; display: flex; align-items: center; justify-content: space-between; padding-top: 22px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo svg { width: 34px; height: 34px; }
+    .word { font-size: 20px; letter-spacing: -.03em; white-space: nowrap; }
+    .word b { font-weight: 700; }
+    .word span { font-weight: 500; color: rgba(199, 224, 255, .8); }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;
+      padding: 7px 14px; font-size: 13px; font-weight: 500; color: var(--ice-200);
+      background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .14);
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 4px rgba(52, 211, 153, .18); }
+
+    .hero-grid {
+      position: relative; width: 100%; flex: 1; display: grid; gap: 56px; align-items: center;
+      grid-template-columns: 1.15fr 1fr; padding: 48px 20px 96px;
+    }
+    h1 { font-size: clamp(46px, 7.4vw, 84px); line-height: 1.02; font-weight: 800; letter-spacing: -.035em; }
+    .handled {
+      display: block; background: linear-gradient(90deg, var(--ice-100), var(--ice-300) 50%, var(--brand-400));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .lede { margin-top: 22px; max-width: 540px; font-size: clamp(17px, 2vw, 20px); color: var(--ice-100); opacity: .92; }
+    .soon { margin-top: 30px; }
+    .soon h2 { font-size: 15px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ice-300); }
+    .soon p { margin-top: 6px; color: var(--ice-200); font-size: 16px; }
+    .actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      height: 54px; padding: 0 24px; border-radius: 16px; font-weight: 600; font-size: 16px;
+      text-decoration: none; transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:focus-visible { outline: 3px solid var(--brand-400); outline-offset: 3px; }
+    .btn.primary { background: #fff; color: var(--deep-900); }
+    .btn.ghost { background: rgba(255, 255, 255, .12); color: #fff; border: 1px solid rgba(255, 255, 255, .16); }
+    .btn.ghost:hover { background: rgba(255, 255, 255, .18); }
+
+    .phones { position: relative; height: 560px; }
+    .phone {
+      position: absolute; width: 250px; border-radius: 44px; padding: 9px; background: #0b0f19;
+      box-shadow: 0 40px 90px -20px rgba(4, 14, 48, .8), inset 0 0 0 1px rgba(255, 255, 255, .12);
+    }
+    .phone img { display: block; width: 100%; border-radius: 36px; }
+    .phone.one { left: 4%; top: 30px; transform: rotate(-5deg); }
+    .phone.two { right: 2%; top: 0; transform: rotate(4deg); }
+
+    /* Features */
+    .features { position: relative; background: var(--deep-950); padding: 88px 0 72px; }
+    .features h2 { font-size: clamp(30px, 4vw, 42px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; max-width: 640px; }
+    .features .sub { margin-top: 12px; color: var(--ice-200); max-width: 600px; font-size: 17px; }
+    .cards { margin-top: 40px; display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+    .card {
+      border-radius: 24px; padding: 26px; background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .09);
+    }
+    .icon {
+      width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand-500), var(--deep-700));
+    }
+    .icon svg { width: 22px; height: 22px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .card h3 { margin-top: 18px; font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+    .card p { margin-top: 8px; color: var(--ice-200); font-size: 15.5px; }
+
+    .contact {
+      margin-top: 56px; border-radius: 28px; padding: 36px; display: flex; flex-wrap: wrap; gap: 24px;
+      align-items: center; justify-content: space-between;
+      background: linear-gradient(135deg, var(--deep-800), var(--brand-600));
+    }
+    .contact h3 { font-size: 26px; font-weight: 800; letter-spacing: -.02em; }
+    .contact p { margin-top: 6px; color: var(--ice-100); }
+
+    footer { border-top: 1px solid rgba(255, 255, 255, .08); padding: 28px 0 40px; color: rgba(199, 224, 255, .7); font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+    footer a { color: var(--ice-200); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; padding: 36px 20px 72px; }
+      .phones { height: 440px; max-width: 420px; width: 100%; margin: 0 auto; }
+      .phone { width: 200px; border-radius: 36px; }
+      .phone img { border-radius: 29px; }
+      .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      nav .pill { display: none; }
+      .phones { height: 360px; }
+      .phone { width: 165px; border-radius: 30px; padding: 7px; }
+      .phone img { border-radius: 24px; }
+      .btn { width: 100%; }
+      .contact { padding: 26px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <canvas id="snow" aria-hidden="true"></canvas>
+    <div class="glow a"></div>
+    <div class="glow b"></div>
+
+    <nav class="wrap" aria-label="Site">
+      <a class="logo" href="/" aria-label="Shovel Group home">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f7bff" /><stop offset="1" stop-color="#0a2d86" /></linearGradient>
+            <linearGradient id="ls" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#d6e6ff" /></linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="15" fill="url(#lg)" />
+          <g stroke="url(#ls)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <path d="M32 32V13.5M32 19.5l-5-4.6M32 19.5l5-4.6" />
+            <path d="M32 32V13.5M32 19.5l-5-4.6M32 19.5l5-4.6" transform="rotate(60 32 32)" />
+            <path d="M32 32V13.5M32 19.5l-5-4.6M32 19.5l5-4.6" transform="rotate(120 32 32)" />
+            <path d="M32 32V13.5M32 19.5l-5-4.6M32 19.5l5-4.6" transform="rotate(180 32 32)" />
+            <path d="M32 32V13.5M32 19.5l-5-4.6M32 19.5l5-4.6" transform="rotate(240 32 32)" />
+            <path d="M32 32V13.5M32 19.5l-5-4.6M32 19.5l5-4.6" transform="rotate(300 32 32)" />
+          </g>
+          <circle cx="32" cy="32" r="4.2" fill="#fff" />
+        </svg>
+        <span class="word"><b>Shovel</b> <span>Group</span></span>
+      </a>
+      <span class="pill"><span class="dot"></span> Coming soon</span>
+    </nav>
+
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Snow day?<span class="handled">Handled.</span></h1>
+        <p class="lede">Tap once and a vetted local pro clears your driveway and walks. Flat prices, live tracking, and photos when it's done.</p>
+        <div class="soon">
+          <h2>Coming soon</h2>
+          <p>Launching first along Colorado's Front Range, on iPhone, Android and the web.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:support@shovelgroup.com?subject=Tell%20me%20when%20Shovel%20Group%20launches">Get launch updates</a>
+          <a class="btn ghost" href="mailto:support@shovelgroup.com?subject=Clearing%20snow%20with%20Shovel%20Group">Earn money clearing snow</a>
+        </div>
+      </div>
+      <div class="phones" aria-hidden="true">
+        <div class="phone one"><img src="img/app-customer-home.jpg" alt="" /></div>
+        <div class="phone two"><img src="img/app-provider-offer.jpg" alt="" /></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="features">
+    <div class="wrap">
+      <h2>Snow removal, the way it should work.</h2>
+      <p class="sub">Shovel Group connects homeowners with trusted local snow removal pros, on demand.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" /></svg></div>
+          <h3>Book in one tap</h3>
+          <p>A flat price up front for your driveway and walks. No quotes, no phone tag, and you're only charged when the job is done.</p>
+        </article>
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></svg></div>
+          <h3>Watch it happen</h3>
+          <p>See your pro on the map as they head over, chat in the app, and get photos of the finished work.</p>
+        </article>
+        <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.6 5 3.2 5 1.4 5 3.3-2.2 3.3-5 3.3-5-1.3-5-3.3" /></svg></div>
+          <h3>Earn clearing snow</h3>
+          <p>Have a shovel or a snowblower? Pick up jobs near you, set your own radius, and get paid out fast.</p>
+        </article>
+      </div>
+
+      <section class="contact" aria-label="Contact">
+        <div>
+          <h3>Questions? We'd love to hear from you.</h3>
+          <p>Email <a href="mailto:support@shovelgroup.com">support@shovelgroup.com</a> and a real person will get back to you.</p>
+        </div>
+        <a class="btn primary" href="mailto:support@shovelgroup.com">Contact us</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; <span id="year">2026</span> Reliable Sno Solutions LLC. Shovel Group is a service of Reliable Sno Solutions LLC.</span>
+      <a href="mailto:support@shovelgroup.com">support@shovelgroup.com</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Gentle falling snow, same as the app's hero. Calmer when reduced motion is on.
+    (function () {
+      var canvas = document.getElementById("snow"), ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      var pace = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches ? 0.5 : 1;
+      var w = 0, h = 0, flakes = [];
+      function make(anywhere) {
+        var r = 0.7 + Math.pow(Math.random(), 2) * 2.4;
+        return { x: Math.random() * w, y: anywhere ? Math.random() * h : -10, r: r,
+                 vy: 0.18 + r * 0.16 + Math.random() * 0.12, phase: Math.random() * 6.28,
+                 sway: 0.15 + Math.random() * 0.35, a: 0.35 + Math.random() * 0.5 };
+      }
+      function resize() {
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = canvas.clientWidth; h = canvas.clientHeight;
+        canvas.width = w * dpr; canvas.height = h * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        var count = Math.round(Math.min(90, (w * h) / 16000));
+        flakes = [];
+        for (var i = 0; i < count; i++) flakes.push(make(true));
+      }
+      function frame() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < flakes.length; i++) {
+          var f = flakes[i];
+          f.phase += 0.01 * pace; f.y += f.vy * pace; f.x += Math.sin(f.phase) * f.sway * 0.5 * pace;
+          if (f.y > h + 8) flakes[i] = f = make(false);
+          if (f.x > w + 8) f.x = -8;
+          if (f.x < -8) f.x = w + 8;
+          ctx.beginPath(); ctx.fillStyle = "rgba(255,255,255," + f.a + ")";
+          ctx.arc(f.x, f.y, f.r, 0, 6.2832); ctx.fill();
+        }
+        requestAnimationFrame(frame);
+      }
+      resize();
+      window.addEventListener("resize", resize);
+      requestAnimationFrame(frame);
+    })();
+  </script>
+</body>
+</html>
